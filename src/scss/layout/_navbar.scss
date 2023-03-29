@@ -1,0 +1,97 @@
+.navbar {
+  @extend .flex-between;
+  position: relative;
+  padding: $--paddding-s;
+  &__logo,
+  &__menu-icon {
+    cursor: pointer;
+    text-align: center;
+
+    & svg {
+      object-fit: contain;
+      max-width: 100%;
+    }
+  }
+
+  &__menu {
+    @extend .flex-between;
+    padding: $--paddding-m;
+
+    text-align: start;
+    &__list {
+      display: flex;
+      &__item {
+        padding-inline: $--paddding-xs1;
+        margin-left: $--margin-xs2;
+        & a {
+          transition: $--transition;
+          @include media-prop(font-size, 2.5rem, 2rem, 2rem);
+          @extend .typo--regular;
+          color: $--blue;
+          &:hover,
+          &:focus {
+            color: $--soft-orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .navbar {
+    &__menu-icon {
+      display: none;
+    }
+    &__menu {
+      flex-direction: row;
+      &__icon-close {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .navbar {
+    &__menu {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: start;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100vh;
+      width: 70vw;
+      background-color: $--color-white;
+      &__list {
+        position: relative;
+        top: 5rem;
+        flex-direction: column;
+        &__item {
+          margin-bottom: $--margin-l;
+        }
+      }
+      &__icon-close {
+        top: 0;
+        right: 0;
+        padding: $--paddding-s;
+        position: absolute;
+        cursor: pointer;
+      }
+
+      &.mobile-active {
+        display: flex;
+      }
+    }
+  }
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: 0 0 0 2000px inset rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  position: absolute;
+}

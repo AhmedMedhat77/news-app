@@ -1,0 +1,20 @@
+.btn {
+  text-align: center;
+  cursor: pointer;
+  &--primary {
+    background-color: $--red;
+    color: $--color-white;
+    transition: $--transition;
+    &:hover {
+      background-color: $--blue;
+    }
+  }
+  &--large {
+    @include media-prop(
+      padding,
+      $--paddding-s $--paddding-xl,
+      $--paddding-s $--paddding-l
+    );
+    @include media-prop(font-size, 4rem, 2.2rem, 2.2rem);
+  }
+}

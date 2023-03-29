@@ -1,0 +1,23 @@
+.header-item {
+  border-bottom: 1px solid $--dark-gray;
+  margin-bottom: $--margin-m;
+  &:last-child {
+    border-bottom: transparent;
+  }
+  &__title {
+    color: $--color-white;
+    @include media-prop(font-size, 3rem, 3rem, 2.8rem);
+    font-weight: 700;
+    margin-bottom: $--margin-m;
+    cursor: pointer;
+    transition: $--transition;
+    &:hover {
+      color: $--soft-orange;
+    }
+  }
+  &__description {
+    color: $--gray-blue;
+    margin-bottom: $--margin-s;
+    @include media-prop(font-size, 2rem, 2rem, 1.8rem);
+  }
+}

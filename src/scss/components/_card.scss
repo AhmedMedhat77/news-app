@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  justify-content: center;
+  &__left {
+    width: 100%;
+    height: 50%;
+    & img {
+      object-fit:contain;
+      height: 100%;
+    }
+  }
+  &__right {
+    margin-left: $--margin-m;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &__counter {
+      @include media-prop(font-size, 6rem, 4rem, 4rem);
+      color: $--dark-gray;
+      font-weight: 500;
+      margin-bottom: $--margin-s;
+      letter-spacing: 1.6;
+    }
+    &__link {
+      @include media-prop(font-size, 3rem, 2.4rem, 2.4rem);
+      color: $--blue;
+      font-weight: 700;
+      transition: $--transition;
+      margin-bottom: $--margin-m;
+      &:hover {
+        color: $--red;
+      }
+    }
+    &__description {
+      color: $--dark-gray;
+      @include media-prop(font-size, 2rem, 1.8rem, 1.8rem);
+    }
+  }
+}

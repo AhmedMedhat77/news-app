@@ -1,0 +1,21 @@
+//google font
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+//abstracts Mixins
+@import "./abstracts/mixin";
+@import "./abstracts/variables";
+// base and roots
+@import "./base/reset";
+@import "./base/typography";
+
+// layouts
+@import "./layout/navbar";
+@import "./layout/hero";
+
+//pages
+@import "./page//Home";
+
+// components
+@import "./components/button";
+@import "./components/headerItem";
+@import "./components/card";
